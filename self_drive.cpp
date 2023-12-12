@@ -36,7 +36,8 @@ public:
       vel.linear.x = 0.;
       vel.angular.z = 0.75;
     }
-    else if (((scan->ranges[270] < 0.25) || (scan->ranges[250] < 0.25) || (scan->ranges[230] < 0.25) ||) &&
+    else if (((scan->ranges[270] < 0.25) || (scan->ranges[250] < 0.25) || (scan->ranges[230] < 0.25) ||
+              (scan->ranges[200] < 0.25 || (scan->ranges[190] < 0.25))) &&
              !(scan->ranges[320] < 0.25))
     {
       vel.linear.x = 0.1;
