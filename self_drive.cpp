@@ -30,7 +30,11 @@ public:
   void subscribe_scan(const sensor_msgs::msg::LaserScan::SharedPtr scan)
   {
     geometry_msgs::msg::Twist vel;
-
+ if (scan->ranges[0] < 0.25 || scan->ranges[340] < 0.25)
+    {
+      vel.linear.x = 0.;
+      vel.angular.z = 0.75;
+    }
       vel.linear.x = 0.15;
       vel.angular.z = 0.;
     
